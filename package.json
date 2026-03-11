@@ -1,0 +1,17 @@
+{
+  "name": "slim-image-app",
+  "version": "1.0.0",
+  "description": "Aplicación Node.js de demostración para optimización de imágenes Docker",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "mkdir -p dist && cp index.js dist/index.js",
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

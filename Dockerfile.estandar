@@ -1,0 +1,22 @@
+# ============================================================
+# DOCKERFILE ESTÁNDAR (ANTIPATRÓN) — Solo para comparación
+# PROBLEMAS DE ESTA APROXIMACIÓN:
+#   1. Imagen base completa node:20 (~1 GB de SO + herramientas innecesarias)
+#   2. Se copian TODOS los archivos (incluye .git, tests, archivos locales)
+#   3. Se instalan dependencias de desarrollo en la imagen de producción
+#   4. Mayor superficie de ataque: más paquetes = más vulnerabilidades
+# ============================================================
+
+FROM node:20
+
+WORKDIR /app
+
+# Copia de golpe todo el contexto (incluyendo archivos innecesarios)
+COPY . .
+
+# Instala todas las dependencias (dev + prod mezcladas)
+RUN npm install
+
+EXPOSE 3000
+
+CMD ["node", "index.js"]

@@ -1,0 +1,21 @@
+# Control de versiones
+.git
+.gitignore
+
+# Dependencias locales (se instalan dentro del contenedor)
+node_modules
+
+# Archivos de build local
+dist
+
+# Archivos de desarrollo y documentación
+*.md
+*.pdf
+.DS_Store
+
+# Dockerfiles (no se necesitan dentro de la imagen)
+Dockerfile*
+
+# Archivos de entorno (NUNCA deben ir en una imagen)
+.env
+.env.*
